@@ -14,6 +14,7 @@ public class UserProfileResponse {
     private String firstName;
     private String lastName;
     private String country;
+    private String email;
     private AvatarEntity avatar;
     private List<AssetsEntity> assets;
     private Long money;
