@@ -98,7 +98,7 @@ public class UserDetailsCustomService implements UserDetailsService {
                 new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(),
                         authenticationRequest.getPassword()));
 
-        return new AuthenticationResponse(user.getUsername(), jwtUtil.generateToken(user));
+        return new AuthenticationResponse(user.getUsername(), jwtUtil.generateToken(user),user.getId());
     }
 
 
