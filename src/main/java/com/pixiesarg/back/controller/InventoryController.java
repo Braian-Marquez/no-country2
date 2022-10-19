@@ -17,33 +17,33 @@ public class InventoryController {
 
 
     @PutMapping("body")
-    public ResponseEntity<Void> buyBody(@RequestParam Long idBody,@RequestParam Long idUser)  {
-        this.inventoryService.buyBody(idBody,idUser);
+    public ResponseEntity<Void> buyBody(@RequestParam Long body,@RequestParam Long user)  {
+        this.inventoryService.buyBody(body,user);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
     @PutMapping("hair")
-    public ResponseEntity<Void> buyHair(@RequestParam Long idHair,@RequestParam Long idUser)  {
-        this.inventoryService.buyHair(idHair,idUser);
+    public ResponseEntity<Void> buyHair(@RequestParam Long hair,@RequestParam Long user)  {
+        this.inventoryService.buyHair(hair,user);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
     @PutMapping("hand")
-    public ResponseEntity<Void> buyHand(@RequestParam Long idHand,@RequestParam Long idUser)  {
-        this.inventoryService.buyHand(idHand,idUser);
+    public ResponseEntity<Void> buyHand(@RequestParam Long hand,@RequestParam Long user)  {
+        this.inventoryService.buyHand(hand,user);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
     @PutMapping("head")
-    public ResponseEntity<Void> buyHead(@RequestParam Long idHead,@RequestParam Long idUser)  {
-        this.inventoryService.buyHead(idHead,idUser);
+    public ResponseEntity<Void> buyHead(@RequestParam Long head,@RequestParam Long user)  {
+        this.inventoryService.buyHead(head,user);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
     @PutMapping("legs")
-    public ResponseEntity<Void> buyLegs(@RequestParam Long idLegs,@RequestParam Long idUser)  {
-        this.inventoryService.buyLegs(idLegs,idUser);
+    public ResponseEntity<Void> buyLegs(@RequestParam Long legs,@RequestParam Long user)  {
+        this.inventoryService.buyLegs(legs,user);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
     @PutMapping("pets")
-    public ResponseEntity<Void> buyPets(@RequestParam Long idPets,@RequestParam Long idUser)  {
-        this.inventoryService.buyPets(idPets,idUser);
+    public ResponseEntity<Void> buyPets(@RequestParam Long pets,@RequestParam Long user)  {
+        this.inventoryService.buyPets(pets,user);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
