@@ -17,7 +17,7 @@ public class DisengageController {
     private DisengageService disengageService;
 
     @PutMapping
-    public ResponseEntity<Void> disengage(@RequestParam Long id)  {
+    public ResponseEntity<Void> disengage(@RequestParam Long id,@RequestBody String example )  {
         this.disengageService.disengage(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
