@@ -4,6 +4,7 @@ import com.pixiesarg.back.domain.assets.*;
 import com.pixiesarg.back.domain.entity.AssetsEntity;
 import com.pixiesarg.back.domain.entity.UserEntity;
 import com.pixiesarg.back.exception.NotFoundException;
+import com.pixiesarg.back.exception.ParamNotFound;
 import com.pixiesarg.back.mapper.InventoryMapper;
 import com.pixiesarg.back.repository.*;
 import com.pixiesarg.back.service.InventoryService;
@@ -49,7 +50,7 @@ public class InventoryServiceImpl implements InventoryService {
         UserEntity userEntity = getUser(idUser);
 
         if (userEntity.getMoney() < bodyAssets.getPrice()) {
-            throw new NotFoundException("insufficient money");
+            throw new ParamNotFound("insufficient money");
         } else {
             userEntity.setMoney(userEntity.getMoney() - bodyAssets.getPrice());
         }
