@@ -31,6 +31,7 @@ public class EquipServiceImpl implements EquipService {
         EquipEntity equip = new EquipEntity();
         AssetsEntity assets = getAssets(id);
         AvatarEntity avatar = getAvatar(idAvatar);
+        equip.setId(assets.getId());
         equip.setName(assets.getName());
         equip.setImage(assets.getImage());
         assets.setIsAvailable(false);
