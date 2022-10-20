@@ -24,6 +24,7 @@ public class LikesServiceImpl implements LikesService {
         } else {
             favorite.setLikes(favorite.getLikes() + 1);
             user.getIdFavorite().add(idFavorite);
+
             userRepository.save(user);
             userRepository.save(favorite);
         }
