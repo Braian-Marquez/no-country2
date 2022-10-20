@@ -9,6 +9,7 @@ import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
+
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
@@ -27,6 +28,8 @@ public class EquipEntity {
     private String name;
 
     private String image;
+
+    private boolean isAvailable = true;
 
     @Column(name = "soft_delete")
     private Boolean softDelete = Boolean.FALSE;
