@@ -29,10 +29,8 @@ public class DisengageServiceImpl implements DisengageService {
 
     @Override
     public void disengage(Long id) {
-        AssetsEntity assets = new AssetsEntity();
+        AssetsEntity assets = getAssets(id);
         EquipEntity equip = getEquip(id);
-        assets.setName(equip.getName());
-        assets.setImage(equip.getImage());
         assets.setIsAvailable(true);
         assetsRepository.save(assets);
         equipRepository.delete(equip);
@@ -46,5 +44,11 @@ public class DisengageServiceImpl implements DisengageService {
         }
         return avatar.get();
     }
-
+    private AssetsEntity getAssets(Long id) {
+        Optional<AssetsEntity> assets = assetsRepository.findById(id);
+        if (assets.isEmpty()) {
+            throw new NotFoundException("Post not found.");
+        }
+        return assets.get();
+    }
 }

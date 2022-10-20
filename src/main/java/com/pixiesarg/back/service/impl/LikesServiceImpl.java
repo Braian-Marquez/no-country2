@@ -7,6 +7,7 @@ import com.pixiesarg.back.repository.UserRepository;
 import com.pixiesarg.back.service.LikesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.Optional;
 
 @Service
@@ -24,7 +25,7 @@ public class LikesServiceImpl implements LikesService {
         } else {
             favorite.setLikes(favorite.getLikes() + 1);
             user.getIdFavorite().add(idFavorite);
-
+            user.setMoney(100L);
             userRepository.save(user);
             userRepository.save(favorite);
         }
