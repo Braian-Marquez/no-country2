@@ -17,8 +17,8 @@ public class LikesController {
 
 
     @PutMapping
-    public ResponseEntity<Void> like(@RequestParam  Long idFavorite,@RequestParam   Long idUser) {
-        this.likesService.likes(idFavorite, idUser);
+    public ResponseEntity<Void> like(@RequestParam  Long favorite,@RequestParam   Long user,@RequestBody String example) {
+        this.likesService.likes(favorite, user);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
