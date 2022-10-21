@@ -77,7 +77,7 @@ public class UserDetailsCustomService implements UserDetailsService {
         userEntity.setEmail(userRequest.getEmail());
         userEntity.setUsername(userRequest.getEmail());
         userEntity.setCountry(userRequest.getCountry());
-        userEntity.setMoney(200L);
+        userEntity.setMoney(1000L);
         avatar.setName("avatar");
         avatar.setImage("https://i.imgur.com/tpviGnP.png");
         avatar.setId(userEntity.getId());
