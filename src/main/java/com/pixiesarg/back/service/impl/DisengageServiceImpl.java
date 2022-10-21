@@ -33,8 +33,7 @@ public class DisengageServiceImpl implements DisengageService {
         EquipEntity equip = getEquip(id);
         assets.setIsAvailable(true);
         assetsRepository.save(assets);
-        equip.setAvailable(false);
-        equipRepository.save(equip);
+        equipRepository.delete(equip);
 
     }
 
