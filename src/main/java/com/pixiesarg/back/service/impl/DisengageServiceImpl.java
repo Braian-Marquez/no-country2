@@ -30,13 +30,9 @@ public class DisengageServiceImpl implements DisengageService {
     @Override
     public void disengage(Long id) {
         AssetsEntity assets = getAssets(id);
-        EquipEntity equip = getEquip(id);
-        assets.setIsAvailable(true);
+        assets.setEquipped(false);
         assetsRepository.save(assets);
-        equipRepository.delete(equip);
-
     }
-
     private EquipEntity getEquip(Long id) {
         Optional<EquipEntity> avatar = equipRepository.findById(id);
         if (avatar.isEmpty()) {

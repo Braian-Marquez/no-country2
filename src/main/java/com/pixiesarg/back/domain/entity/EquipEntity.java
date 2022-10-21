@@ -29,7 +29,7 @@ public class EquipEntity {
 
     private String image;
 
-    private boolean isAvailable = true;
+    private Boolean isAvailable=true;
 
     @Column(name = "soft_delete")
     private Boolean softDelete = Boolean.FALSE;

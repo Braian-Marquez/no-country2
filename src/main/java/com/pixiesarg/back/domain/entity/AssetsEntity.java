@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import javax.persistence.*;
+
 import static javax.persistence.GenerationType.IDENTITY;
 
 
@@ -24,6 +26,8 @@ public class AssetsEntity {
 
     private String image;
 
-    private Boolean isAvailable=true;
+    private Boolean equipped = false;
+
+
 
 }

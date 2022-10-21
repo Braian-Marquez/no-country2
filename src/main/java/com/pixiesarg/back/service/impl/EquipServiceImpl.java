@@ -34,7 +34,7 @@ public class EquipServiceImpl implements EquipService {
         equip.setId(assets.getId());
         equip.setName(assets.getName());
         equip.setImage(assets.getImage());
-        assets.setIsAvailable(false);
+        assets.setEquipped(true);
         avatar.getEquip().add(equip);
         equipRepository.save(equip);
         avatarRepository.save(avatar);
