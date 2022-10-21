@@ -17,33 +17,29 @@ public class LikesServiceImpl implements LikesService {
 
     @Override
     public void likes(Long idFavorite, Long idUser) {
-        UserEntity user = getUserId(idUser);
-        UserEntity favorite = getUserId(idFavorite);
+        UserEntity myUser = getUserId(idUser);
+        UserEntity favoriteUser = getUserId(idFavorite);
 
-        if (user.getIdFavorite().stream().anyMatch(x -> x == idFavorite)) {
-            throw new NotFoundException("Favorite included");
-        } else {
-            if (user.getLikes()>0){
-                Long likes= user.getLikes();
-                favorite.setLikes(likes+1L);
-                user.getIdFavorite().add(idFavorite);
-                Long money=user.getMoney();
-                user.setMoney(money+100L);
-                userRepository.save(user);
-                userRepository.save(favorite);
+
+            if (favoriteUser.getLikes()>0){
+                Long likes= favoriteUser.getLikes();
+                favoriteUser.setLikes(likes+1L);
+                myUser.getIdFavorite().add(idFavorite);
+                Long money=myUser.getMoney();
+                myUser.setMoney(money+100L);
+                userRepository.save(myUser);
+                userRepository.save(favoriteUser);
             }
-            if (user.getLikes()==0){
+            if (favoriteUser.getLikes()==null){
                 int likes= 0;
-                favorite.setLikes(likes+1L);
-                user.getIdFavorite().add(idFavorite);
-                Long money=user.getMoney();
-                user.setMoney(money+100L);
-                userRepository.save(user);
-                userRepository.save(favorite);
+                favoriteUser.setLikes(likes+1L);
+                myUser.getIdFavorite().add(idFavorite);
+                Long money=myUser.getMoney();
+                myUser.setMoney(money+100L);
+                userRepository.save(myUser);
+                userRepository.save(favoriteUser);
             }
 
-
-        }
 
 
     }
