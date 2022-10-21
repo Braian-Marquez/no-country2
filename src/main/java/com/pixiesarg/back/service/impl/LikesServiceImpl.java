@@ -19,11 +19,11 @@ public class LikesServiceImpl implements LikesService {
     public void likes(Long idFavorite, Long idUser) {
         UserEntity user = getUserId(idUser);
         UserEntity favorite = getUserId(idFavorite);
-
+        Long num= Long.valueOf(0);
         if (user.getIdFavorite().stream().anyMatch(x -> x == idFavorite)) {
             throw new NotFoundException("Favorite included");
         } else {
-            favorite.setLikes(favorite.getLikes() + 1);
+            favorite.setLikes(num+1L);
             user.getIdFavorite().add(idFavorite);
             user.setMoney(100L);
             userRepository.save(user);
