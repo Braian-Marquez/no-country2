@@ -23,7 +23,8 @@ public class LikesServiceImpl implements LikesService {
         if (user.getIdFavorite().stream().anyMatch(x -> x == idFavorite)) {
             throw new NotFoundException("Favorite included");
         } else {
-            favorite.setLikes(favorite.getLikes()+1L);
+            Long likes=favorite.getLikes();
+            favorite.setLikes(likes+1L);
             user.getIdFavorite().add(idFavorite);
             user.setMoney(100L);
             userRepository.save(user);
