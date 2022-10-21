@@ -23,7 +23,7 @@ public class LikesServiceImpl implements LikesService {
 
 
             if (favoriteUser.getLikes()>0){
-                System.out.println("entre 0");
+
                 Long likes= favoriteUser.getLikes();
                 favoriteUser.setLikes(likes+1L);
                 myUser.getIdFavorite().add(idFavorite);
@@ -32,8 +32,7 @@ public class LikesServiceImpl implements LikesService {
                 userRepository.save(myUser);
                 userRepository.save(favoriteUser);
             }
-            if (favoriteUser.getLikes().equals(null)){
-                System.out.println("entre null");
+            if (favoriteUser.getLikes()==0){
                 int likes= 0;
                 favoriteUser.setLikes(likes+1L);
                 myUser.getIdFavorite().add(idFavorite);

@@ -82,6 +82,7 @@ public class UserDetailsCustomService implements UserDetailsService {
         avatar.setImage("https://i.imgur.com/tpviGnP.png");
         avatar.setId(userEntity.getId());
         avatarRepository.save(avatar);
+        userEntity.setLikes(0L);
         userEntity.setAvatar(avatar);
         userEntity.setRoles(List.of(roleRepository.findByName(RoleType.ADMIN.getFullRoleName())));
         userEntity.setPassword(passwordEncoder.encode(userRequest.getPassword()));
