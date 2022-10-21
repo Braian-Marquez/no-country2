@@ -33,16 +33,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserProfileResponse> getAllUsers() {
-        List<UserEntity> userEntityList = userRepository.findAll();
-        List<UserProfileResponse> userProfileResponseList = new ArrayList<>();
-        for (UserEntity user : userEntityList) {
-            userProfileResponseList.add(userProfileMapper.userEntityToResponse(user));
-        }
-        return userProfileResponseList;
-    }
-
-    @Override
     public UserProfileResponse getUserById(Long id) {
         UserEntity user = getUserId(id);
         UserProfileResponse response = new UserProfileResponse();
