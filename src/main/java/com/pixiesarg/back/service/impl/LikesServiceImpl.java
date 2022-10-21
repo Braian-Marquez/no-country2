@@ -30,7 +30,7 @@ public class LikesServiceImpl implements LikesService {
                 userRepository.save(myUser);
                 userRepository.save(favoriteUser);
             }
-            if (favoriteUser.getLikes()==null){
+            if (favoriteUser.getLikes().equals(null)){
                 int likes= 0;
                 favoriteUser.setLikes(likes+1L);
                 myUser.getIdFavorite().add(idFavorite);
