@@ -18,6 +18,7 @@ public class UserProfileMapper {
         userProfile.setLikes(entity.getLikes());
         userProfile.setCountry(entity.getCountry());
         userProfile.setAvatar(entity.getAvatar());
+        userProfile.setAssets(entity.getInventory());
         userProfile.setIdFavorite(entity.getIdFavorite());
         return userProfile;
     }
