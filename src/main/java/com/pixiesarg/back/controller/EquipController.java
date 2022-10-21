@@ -18,8 +18,8 @@ public class EquipController {
 
 
     @PutMapping
-    public ResponseEntity<Void> buyBody(@RequestParam Long id,@RequestParam Long idAvatar,@RequestBody String example)  {
-        this.equipService.equip(id,idAvatar);
+    public ResponseEntity<Void> buyBody(@RequestParam Long id,@RequestBody String example)  {
+        this.equipService.equip(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 

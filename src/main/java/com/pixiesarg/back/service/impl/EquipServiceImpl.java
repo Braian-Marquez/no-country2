@@ -27,17 +27,13 @@ public class EquipServiceImpl implements EquipService {
     }
 
     @Override
-    public void equip(Long id, Long idAvatar) {
-        EquipEntity equip = new EquipEntity();
+    public void equip(Long id) {
+
         AssetsEntity assets = getAssets(id);
-        AvatarEntity avatar = getAvatar(idAvatar);
-        equip.setId(assets.getId());
-        equip.setName(assets.getName());
-        equip.setImage(assets.getImage());
+
         assets.setEquipped(true);
-        avatar.getEquip().add(equip);
-        equipRepository.save(equip);
-        avatarRepository.save(avatar);
+
+        assetsRepository.save(assets);
     }
 
     private AssetsEntity getAssets(Long id) {
