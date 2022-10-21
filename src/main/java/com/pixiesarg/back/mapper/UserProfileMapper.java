@@ -12,6 +12,9 @@ public class UserProfileMapper {
     public UserProfileResponse userEntityToResponse(UserEntity entity) {
         UserProfileResponse userProfile = new UserProfileResponse();
         userProfile.setFirstName(entity.getFirstName());
+        userProfile.setEmail(entity.getEmail());
+        userProfile.setLastName(entity.getLastName());
+        userProfile.setLikes(entity.getLikes());
         userProfile.setCountry(entity.getCountry());
         userProfile.setAvatar(entity.getAvatar());
         userProfile.setIdFavorite(entity.getIdFavorite());

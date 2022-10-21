@@ -15,6 +15,7 @@ public class UserProfileResponse {
     private String lastName;
     private String country;
     private String email;
+    private Long likes;
     private Long id;
     private AvatarEntity avatar;
     private List<AssetsEntity> assets;
